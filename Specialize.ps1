@@ -3,7 +3,7 @@ $ErrorActionPreference = "Stop"
 try
 {
     $temp = "$ENV:SystemRoot\Temp"
-    $baseUrl = "https://raw.github.com/cloudbase/windows-openstack-imaging-tools/master"
+    $baseUrl = "https://raw.github.com/anchor/windows-openstack-imaging-tools/Anchor"
 
     # Put the wallpaper in place
     $wallpaper_dir = "$ENV:SystemRoot\web\Wallpaper\Cloudbase"
@@ -15,6 +15,18 @@ try
     $Host.UI.RawUI.WindowTitle = "Downloading wallpaper..."
     $wallpaper = "Wallpaper-Cloudbase-2013.png"
     (new-object System.Net.WebClient).DownloadFile("$baseUrl/$wallpaper", "$wallpaper_dir\$wallpaper")
+
+    # Put the Anchor bmp in place
+    $bmp_dir = "$ENV:SystemRoot\OEM"
+    if (!(Test-Path $bmp_dir))
+    {
+        mkdir $bmp_dir
+    }
+
+    $Host.UI.RawUI.WindowTitle = "Downloading bmp..."
+    $bmp = "logo.bmp"
+    (new-object System.Net.WebClient).DownloadFile("$baseUrl/$bmp", "$bmp_dir\$bmp")
+
 
     $Host.UI.RawUI.WindowTitle = "Configuring GPOs..."
 
