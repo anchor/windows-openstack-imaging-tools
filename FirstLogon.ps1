@@ -1,5 +1,8 @@
 $ErrorActionPreference = "Stop"
 
+Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value 'C:\Windows\Web\Wallpaper\Cloudbase\Wallpaper-Cloudbase-2013.png'
+rundll32.exe user32.dll, UpdatePerUserSystemParameters
+
 function getOSVersion(){
     $v = (Get-WmiObject Win32_OperatingSystem).Version.Split('.')
 
