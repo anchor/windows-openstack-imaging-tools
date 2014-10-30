@@ -16,7 +16,7 @@ try
     $wallpaper = "Wallpaper-Cloudbase-2013.png"
     (new-object System.Net.WebClient).DownloadFile("$baseUrl/$wallpaper", "$wallpaper_dir\$wallpaper")
 
-    Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value '$wallpaper_dir\$wallpaper'
+    Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value "$wallpaper_dir\$wallpaper"
     rundll32.exe user32.dll, UpdatePerUserSystemParameters
 
     # Put the Anchor bmp in place
