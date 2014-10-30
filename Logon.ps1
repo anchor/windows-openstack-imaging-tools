@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 
 try
 {
-    Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value "$wallpaper_dir\$wallpaper"
+    Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value 'C:\Windows\Web\Wallpaper\Cloudbase\Wallpaper-Cloudbase-2013.png'
     rundll32.exe user32.dll, UpdatePerUserSystemParameters
 
     $Host.UI.RawUI.WindowTitle = "Downloading PSWindowsUpdate..."
