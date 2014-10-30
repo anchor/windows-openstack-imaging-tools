@@ -2,6 +2,9 @@ $ErrorActionPreference = "Stop"
 
 try
 {
+    Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value "$wallpaper_dir\$wallpaper"
+    rundll32.exe user32.dll, UpdatePerUserSystemParameters
+
     $Host.UI.RawUI.WindowTitle = "Downloading PSWindowsUpdate..."
 
     $psWindowsUpdateBaseUrl = "http://gallery.technet.microsoft.com/scriptcenter/2d191bcd-3308-4edd-9de2-88dff796b0bc/file/"
